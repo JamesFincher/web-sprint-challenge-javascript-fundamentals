@@ -83,7 +83,7 @@ function animalNames(info) {
 
 }
 
-console.log(animalNames(zooAnimals))
+// console.log(animalNames(zooAnimals))
 
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -92,10 +92,13 @@ Using lowerCaseNames use .map() to create a new array of strings with the animal
 For example: ['jackal, asiatic', .....]
 */
 
-function lowerCaseNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lowerCaseNames(info) {
+  const returnArr = info.map(function (item) {
+    return item['animal_name'].toLowerCase()
+  })
+  return returnArr
 }
-
+console.log(lowerCaseNames(zooAnimals))
 
 /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
 The zoo is concerned about animals with a lower population count. 
