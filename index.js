@@ -110,7 +110,7 @@ function lowPopulationAnimals(info) {
   console.log(returnArr)
   return returnArr
 }
-console.log(lowPopulationAnimals(zooAnimals))
+// console.log(lowPopulationAnimals(zooAnimals))
 
 /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
 The zoo needs to know their total animal population across the United States. 
@@ -118,11 +118,13 @@ Using USApop find the total population from the zoos array using the .reduce() m
 Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
 */
 
-function USApop(/*Your Code Here*/) {
+function USApop(info) {
+  return info.reduce(function (acc, item) {
+    return acc + item.population
+  }, 0)
   /*Your Code Here*/
 }
-
-
+// console.log(USApop(zooAnimals))
 // 🦁🦁🦁 Callbacks 🦁🦁🦁  
 /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
   * Use the higher-order function consume with 3 parameters: a, b and cb
@@ -131,30 +133,31 @@ function USApop(/*Your Code Here*/) {
   * The consume function should return the invocation of cb, passing a and b into cb as arguments
 */
 
-function consume(/*Your Code Here */) {
-  /*Your Code Here */
+function consume(a, b, cb) {
+  return cb(a, b)  /*Your Code Here */
 }
 
 
 /* 🦁🦁🦁 Step 2: Create several functions to callback with consume(); 🦁🦁🦁 */
 // 🦁🦁🦁 Use add to return the sum of two numbers 🦁🦁🦁
 
-function add(/*Your Code Here */) {
-  /*Your Code Here*/
+function add(a, b) {
+  return a + b
 }
 
 
 // 🦁🦁🦁 Use multiply to return the product of two numbers 🦁🦁🦁
 
-function multiply(/*Your Code Here */) {
+function multiply(a, b) {
+  return a * b
   /*Your Code Here */
 }
 
 
 // 🦁🦁🦁 Use greeting to accept a first and last name and return "Hello {first-name} {last-name}, nice to meet you!" 🦁🦁🦁
 
-function greeting(/*Your Code Here */) {
-  return /*Your Code Here */
+function greeting(firstName, lastName) {
+  return `Hello ${firstName} ${lastName}, nice to meet you!`
 }
 
 
