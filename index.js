@@ -33,13 +33,13 @@ function summation(num) {
   let summation = 0;
   for (let i = 0; i < num; i++) {
     let counter = i + 1
-    console.log(counter)
+    // console.log(counter)
     summation = counter + summation;
   }
   return summation
 }
 /*Your Code Here*/
-console.log(summation(4))
+// console.log(summation(4))
 
 
 
@@ -65,9 +65,25 @@ Use animalNames to populate and return the displayNames array with only the anim
 displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
 */
 
-function animalNames(/*Your Code Here*/) {
-  /*Your Code Here*/
+function animalNames(info) {
+  //works below
+  // let returnArr = []
+  // console.log(info.length)
+  // for (let i = 0; i < info.length; i++) {
+  //   returnArr.push(`name: ${info[i]['animal_name']}, scientific: ${info[i]['scientific_name']}`)
+  // }
+  // return returnArr
+  let returnArr = []
+
+  info.forEach(function (item) { returnArr.push(`name: ${item['animal_name']}, scientific: ${item['scientific_name']}`) })
+
+  return returnArr
+
+
+
 }
+
+console.log(animalNames(zooAnimals))
 
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
